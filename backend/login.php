@@ -1,14 +1,30 @@
 <?php
 
-    if(isset($_POST['email']) || isset($_POST['password'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+require './../config/db.php';
 
-        if($email == 'irfanaziiz945@gmail.com'  && $password == '1') {
-            header('Location:./../dashboard.php');
-        } 
-        else {
-            echo "email atau password salah";
+if(isset($_POST['submit'])) {
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    $user = mysqli_query($db_connect,"SELECT * FROM users WHERE email = '$email'");
+    if(mysqli_num_rows($user) > 0) {
+        $data = mysqli_fetch_assoc($user);
+        
+        if(password_verify($password,$data['password'])) {
+            echo "selamat datang ".$data['name'];
+            echo '<a href="../create.php">Klik di sini untuk membuat data baru</a>';
+            die;
+
+            //otorisasi
+        } else {
+            echo "password salah";
+            die;
         }
+
+    } else {
+        echo "email atau password salah";
+        die;
     }
+}
 ?>

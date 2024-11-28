@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         /* Gradient Background */
         body {
-            background: #222;
+            background: #222;;
             height: 100vh;
             display: flex;
             align-items: center;
@@ -17,69 +17,75 @@
         }
 
         /* Card Design */
-        .login-card {
+        .register-card {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
             color: #fff;
         }
 
-        .login-card h2 {
+        .register-card h2 {
             font-size: 1.8rem;
             font-weight: 600;
         }
 
-        .login-card .form-control {
+        .register-card .form-control {
             background: rgba(255, 255, 255, 0.2);
             border: none;
             color: #fff;
         }
 
-        .login-card .form-control:focus {
-            background: rgba(255, 255, 255, 0.1);
+        .register-card .form-control:focus {
+            background: rgba(255, 255, 255, 03);
             color: #fff;
             box-shadow: none;
         }
 
-        .login-card .btn-primary {
-            background: #2575fc;
+        .register-card .btn-primary {
+            background: #2575fc
             border: none;
             font-weight: bold;
             transition: all 0.3s;
         }
 
-        .login-card .btn-primary:hover {
+        .register-card .btn-primary:hover {
             background: #6a11cb;
         }
 
-        .login-card a {
+        .register-card a {
             color: #fff;
             text-decoration: underline;
         }
 
-        .login-card p {
+        .register-card p {
             margin-top: 20px;
             font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <div class="login-card text-center">
-        <h2>WELCOME</h2>
-        <p>Please login to your account</p>
-        <form action="./backend/login.php" method="post" class="mt-4">
+    <div class="register-card text-center">
+        <h2>Regristasi akun kamu disini ya </h2>
+        <p></p>
+        <form action="./backend/register.php" method="post" class="mt-4">
+            <div class="mb-3">
+                <input type="text" name="name" class="form-control" placeholder="Enter your name" required>
+            </div>
             <div class="mb-3">
                 <input type="email" name="email" class="form-control" placeholder="Enter your email" required>
             </div>
             <div class="mb-3">
                 <input type="password" name="password" class="form-control" placeholder="Enter your password" required>
             </div>
-            <button type="submit" name="submit" class="btn btn-primary w-100">Login</button>
+            <div class="mb-3">
+                <input type="password" name="confirm" class="form-control" placeholder="Confirm your password" required>
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary w-100">Register</button>
         </form>
         <p class="mt-3">
-            Belum punya account ? <a href="register.php">Daftar Disini</a>
+            Udah punya account ? <a href="index.php">Login Disini</a>
         </p>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
