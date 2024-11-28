@@ -13,6 +13,7 @@ if(isset($_POST['submit'])) {
         
         if(password_verify($password,$data['password'])) {
             echo "selamat datang ".$data['name'];
+            echo '<a href="../create.php">Klik di sini untuk membuat data baru</a>';
             die;
 
             //otorisasi
